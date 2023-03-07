@@ -23,6 +23,10 @@ function App() {
     .then((response) => response.text())
     .then((data) => setAtext([...data]));
 
+    
+  }, [])
+
+  useEffect(() => {
     const timer = setInterval(() => {
       console.log("timer is running...")
       console.log("Atext:",Atext.length)
@@ -37,9 +41,7 @@ function App() {
     }, 3000)
 
     return () => clearInterval(timer)
-  }, [])
-
- 
+  })
 
   return (
     <div>
