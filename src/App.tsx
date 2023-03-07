@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 
 function App() {
@@ -7,18 +7,16 @@ function App() {
   const [count, setCount] = useState(0);
   const [Dtext, setDtext] = useState("");
 
-  //useEffect(() => {
+  useEffect(() => {
     
     fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
   .then((response) => response.text())
   .then((data) => setAtext([...data]));
     
-//}, [])
+
 
   const timer = setInterval(() => {
-    console.log("Atext:",Atext.length)
-    console.log("count:",count)
-    if (count > Atext.length) clearInterval(timer);
+    if (count > Atext.length-1) clearInterval(timer);
     else {
       setDtext(Dtext+Atext[count])
       setCount(count+1)
@@ -26,7 +24,7 @@ function App() {
     }
   }, 3000)
 
-  
+  }, [])
 
 
 
