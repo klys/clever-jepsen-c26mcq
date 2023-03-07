@@ -7,13 +7,11 @@ function App() {
   const [count, setCount] = useState(0);
   const [Dtext, setDtext] = useState("");
 
-  useEffect(() => {
-    
-    fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
+  fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
   .then((response) => response.text())
   .then((data) => setAtext([...data]));
-    
 
+  useEffect(() => {
 
   const timer = setInterval(() => {
     if (count > Atext.length-1) clearInterval(timer);
