@@ -20,8 +20,8 @@ function App() {
   useEffect(() => {
     console.log("executed!")
     fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
-    .then((response) => response.text())
-    .then((data) => setAtext([...data]));
+    .then(async (response) => setAtext([...await response.text()]))
+    
 
     
   }, [])
