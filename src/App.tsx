@@ -39,7 +39,7 @@ function App() {
       console.log("timer is running...")
       console.log("Atext:",Atext.length)
       console.log("count:", count)
-      if (count < Atext.length) clearInterval(timer);
+      if ((count+1) >= Atext.length) clearInterval(timer);
       else {
         console.log("We are in business")
         setDtext(Dtext+Atext[count])
