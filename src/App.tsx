@@ -8,7 +8,6 @@
 }
 */
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
 
 function App() {
 
