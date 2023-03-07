@@ -9,11 +9,11 @@
 */
 import { useState, useEffect } from "react";
 
-const [Atext, setAtext] = useState([]);
+
 
 function App() {
 
-  
+  const [Atext, setAtext] = useState([]);  
   const [count, setCount] = useState(0);
   const [Dtext, setDtext] = useState("");
 
@@ -49,7 +49,7 @@ function App() {
     }, 3000)
 
     return () => clearInterval(timer)
-  },[])
+  },[Atext])
 
   return (
     <div>
