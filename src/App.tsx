@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <p style={{color:"black"}}>{Dtext}_</p>
+      <p style={{color:"auto"}}>{Dtext}_</p>
     </div>
   );
 }
