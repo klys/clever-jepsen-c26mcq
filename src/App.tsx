@@ -18,6 +18,9 @@ function App() {
     });
 
     const timer = setInterval(() => {
+      console.log("timer is running...")
+      console.log("Atext:",Atext.length-1)
+      console.log("count:", count)
       if (count < Atext.length-1) clearInterval(timer);
       else {
         console.log("We are in business")
