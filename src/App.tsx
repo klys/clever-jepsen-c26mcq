@@ -41,7 +41,7 @@ function App() {
     }, 3000)
 
     return () => clearInterval(timer)
-  })
+  },[])
 
   return (
     <div>
