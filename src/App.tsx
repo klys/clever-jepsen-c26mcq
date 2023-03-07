@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import reactLogo from "./assets/react.svg";
 
 function App() {
@@ -7,9 +7,11 @@ function App() {
   const [count, setCount] = useState(0);
   const [Dtext, setDtext] = useState("");
 
-  fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
+  useCallback(() => { 
+    fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
   .then((response) => response.text())
   .then((data) => setAtext([...data]));
+  }, [])
 
   useEffect(() => {
 
