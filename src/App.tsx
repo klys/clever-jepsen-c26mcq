@@ -49,7 +49,7 @@ function App() {
     }, 3000)
 
     return () => clearInterval(timer)
-  },[Atext])
+  },[Atext, count, Dtext])
 
   return (
     <div>
