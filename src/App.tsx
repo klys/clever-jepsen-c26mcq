@@ -18,7 +18,7 @@ function App() {
     });
 
     const timer = setInterval(() => {
-      if (count > Atext.length-1) clearInterval(timer);
+      if (count < Atext.length-1) clearInterval(timer);
       else {
         console.log("We are in business")
         setDtext(Dtext+Atext[count])
@@ -26,7 +26,7 @@ function App() {
         
       }
     }, 3000)
-    
+
     return () => clearInterval(timer)
   }, [])
 
