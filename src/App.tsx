@@ -3,7 +3,9 @@ import reactLogo from "./assets/react.svg";
 
 function App() {
 
-
+  const [Atext, setAtext] = useState([]);
+  const [count, setCount] = useState(0);
+  const [Dtext, setDtext] = useState("");
 
   //useEffect(() => {
     
@@ -22,9 +24,7 @@ function App() {
     }
   }, 3000)
 
-  const [Atext, setAtext] = useState([]);
-  const [count, setCount] = useState(0);
-  const [Dtext, setDtext] = useState("");
+  
 
 
 
