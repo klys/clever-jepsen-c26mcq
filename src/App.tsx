@@ -16,6 +16,8 @@ function App() {
 //}, [])
 
   const timer = setInterval(() => {
+    console.log("Atext:",Atext.length())
+    console.log("count:",count)
     if (Atext.length() < count) clearInterval(timer);
     else {
       setDtext(Dtext+Atext[count])
