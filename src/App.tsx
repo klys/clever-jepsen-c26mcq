@@ -19,34 +19,26 @@ function App() {
 
  
   useEffect(() => {
-    console.log("executed!")
+    // Fetching the url and processing the information
     fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
-    .then(async (response) => {
-      let data = await response.text();
-      setAtext([...data])
-      console.log("response",data)
-    })
-    .then(() => {
-      console.log("AText:",Atext)
-    })
+    .then(async (response) =>setAtext([...await response.text()])
+
+    )
     
 
     
   }, [])
 
   useEffect(() => {
+    // processing the desired effect on the rendering side
     const timer = setInterval(() => {
-      console.log("timer is running...")
-      console.log("Atext:",Atext.length)
-      console.log("count:", count)
+
       if ((count) >= Atext.length) clearInterval(timer);
       else {
-        console.log("We are in business")
         setDtext(Dtext+Atext[count])
         setCount(count+1)
-        
       }
-    }, 3000)
+    }, 1500)
 
     return () => clearInterval(timer)
   },[Atext, count, Dtext])
