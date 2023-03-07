@@ -1,8 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 
 function App() {
+
+  useEffect(() => {
+    
+    fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
+  .then((response) => response)
+  .then((data) => console.log(data));
+    
+}, [])
+
+
   const [count, setCount] = useState(0);
 
   return (
