@@ -8,6 +8,7 @@ function App() {
   const [Dtext, setDtext] = useState("");
 
   useCallback(() => { 
+    console.log("executed!")
     fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
   .then((response) => response.text())
   .then((data) => setAtext([...data]));
@@ -18,6 +19,7 @@ function App() {
   const timer = setInterval(() => {
     if (count > Atext.length-1) clearInterval(timer);
     else {
+      console.log("We are in business")
       setDtext(Dtext+Atext[count])
       setCount(count+1)
       
