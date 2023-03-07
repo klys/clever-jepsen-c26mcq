@@ -16,7 +16,7 @@ function App() {
 //}, [])
 
   const timer = setInterval(() => {
-    if (Atext === Dtext) clearInterval(timer);
+    if (Atext.length === Dtext.length) clearInterval(timer);
     else {
       setDtext(Dtext+Atext[count])
       setCount(count+1)
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div>
-      <p>{Dtext}_</p>
+      <p style={color:"black"}>{Dtext}_</p>
     </div>
   );
 }
