@@ -21,8 +21,9 @@ function App() {
     console.log("executed!")
     fetch("https://wgg522pwivhvi5gqsn675gth3q0otdja.lambda-url.us-east-1.on.aws/77726f")
     .then(async (response) => {
-      setAtext([...await response.text()])
-      console.log("response",response.text())
+      let data = await response.text();
+      setAtext([...data])
+      console.log("response",data)
     })
     .then(() => {
       console.log("AText:",Atext)
