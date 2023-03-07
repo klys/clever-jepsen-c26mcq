@@ -14,22 +14,23 @@ function App() {
     .then((response) => response.text())
     .then((data) => {
       setAtext([...data])
-      const timer = setInterval(() => {
-        if (count > Atext.length-1) clearInterval(timer);
-        else {
-          console.log("We are in business")
-          setDtext(Dtext+Atext[count])
-          setCount(count+1)
-          
-        }
-      }, 3000)
+      
     });
 
+    const timer = setInterval(() => {
+      if (count > Atext.length-1) clearInterval(timer);
+      else {
+        console.log("We are in business")
+        setDtext(Dtext+Atext[count])
+        setCount(count+1)
+        
+      }
+    }, 3000)
     
-
+    return () => clearInterval(timer)
   }, [])
 
-
+ 
 
   return (
     <div>
